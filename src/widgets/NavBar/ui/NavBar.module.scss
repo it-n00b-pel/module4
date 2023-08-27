@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__links{
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header__link {
+  transition: .3s
+}
+
+.header__link:hover {
+  transform: scale(1.1);
+}
+
+.header__logo__isActive  {
+  cursor: auto;
+}
+
+
