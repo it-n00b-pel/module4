@@ -6,7 +6,7 @@ import { AppRoutesProps, routeConfig } from 'src/shared/config/routeConfig/route
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (
-            <Suspense fallback={<>LOADER</>}>
+            <Suspense fallback={<h1>LOADER</h1>}>
                 <div>
                     {route.element}
                 </div>

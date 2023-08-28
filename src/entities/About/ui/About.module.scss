@@ -1,0 +1,30 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .about__content {
+    max-width: 1024px;
+
+    .about__title {
+      font-family: "Libre Baskerville", sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .about__text  img {
+      float: right;
+      margin: 15px;
+    }
+
+  }
+
+
+
+
+
+}
+
+

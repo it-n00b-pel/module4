@@ -1,8 +1,10 @@
 @import "reset";
 
 .app {
-  width: 90%;
-  margin: 30px auto 0;
+  max-width: 1440px;
+  margin: 30px auto;
+  padding-left: 40px;
+  padding-right: 40px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }

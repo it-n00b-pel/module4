@@ -1,7 +1,9 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
+  //width: 95%;
+  //margin: 0  auto;
 }
 
 .header__links{
@@ -9,6 +11,7 @@
   gap: 20px;
   font-size: 20px;
   font-weight: 700;
+
 }
 
 .header__link {
@@ -21,6 +24,11 @@
 
 .header__logo__isActive  {
   cursor: auto;
+}
+
+.header__img{
+  width: 180px;
+  height: 60px;
 }
 
 

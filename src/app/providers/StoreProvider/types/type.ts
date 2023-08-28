@@ -1,11 +1,12 @@
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
+import { AboutActionType } from 'src/entities/About';
 import {
     BannerActionType,
 } from 'src/entities/Banner/model/slice/bannerSlice.ts';
 
 import { createReduxStore } from '../config/store';
 
-export type AppActionsType = BannerActionType
+export type AppActionsType = BannerActionType | AboutActionType
 
 const store = createReduxStore();
 

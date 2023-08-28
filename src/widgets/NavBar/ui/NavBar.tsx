@@ -23,7 +23,7 @@ const NavBar = memo(() => {
     return (
         <header className={style.header}>
             <a href="/" className={classNames({ [style.header__logo__isActive]: isActive })}>
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" className={style.header__img} />
             </a>
             <nav className={style.header__links}>
                 {itemsList}

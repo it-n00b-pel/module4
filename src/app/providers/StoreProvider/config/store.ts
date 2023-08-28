@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { AppDispatch, AppRootStateType } from 'src/app/providers/StoreProvider/types/type.ts';
+import { aboutReducer } from 'src/entities/About';
 import { bannerReducer } from 'src/entities/Banner';
 
 const rootReducer = combineReducers({
     banner: bannerReducer,
+    about: aboutReducer,
 });
 
 export function createReduxStore() {

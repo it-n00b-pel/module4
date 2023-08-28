@@ -1,4 +1,5 @@
 import { RouteProps } from 'react-router-dom';
+import { AboutPage } from 'src/pages/AboutPage';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -31,7 +32,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
-        element: <>ABOUT</>,
+        element: <AboutPage />,
     },
     // last
     [AppRoutes.NOT_FOUND]: {

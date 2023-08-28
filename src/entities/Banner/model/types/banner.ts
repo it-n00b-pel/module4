@@ -1,4 +1,4 @@
-export type BannerSchema = {
+export type articlePromoSchema = {
     id: number,
     tag: string,
     title: string,

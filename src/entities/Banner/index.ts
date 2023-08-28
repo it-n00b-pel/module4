@@ -1,5 +1,5 @@
 export { Banner } from './ui/Banner.tsx';
-export type { BannerSchema } from './model/types/banner.ts';
+export type { articlePromoSchema } from './model/types/banner.ts';
 export {
     bannerReducer,
     setBannerData,
