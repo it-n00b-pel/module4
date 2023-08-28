@@ -4,10 +4,12 @@ import thunkMiddleware from 'redux-thunk';
 import { AppDispatch, AppRootStateType } from 'src/app/providers/StoreProvider/types/type.ts';
 import { aboutReducer } from 'src/entities/About';
 import { bannerReducer } from 'src/entities/Banner';
+import { articleListReducer } from 'src/widgets/ArticleList';
 
 const rootReducer = combineReducers({
     banner: bannerReducer,
     about: aboutReducer,
+    articlesList: articleListReducer,
 });
 
 export function createReduxStore() {

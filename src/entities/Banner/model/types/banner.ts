@@ -1,4 +1,4 @@
-export type articlePromoSchema = {
+export type ArticlePromoSchema = {
     id: number,
     tag: string,
     title: string,

@@ -1,5 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { AboutPage } from 'src/pages/AboutPage';
+import { BlogsPage } from 'src/pages/BlogsPage';
+import HomePage from 'src/pages/HomePage/ui/HomePage.tsx';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -24,11 +26,11 @@ export const RoutePath: Record<AppRoutes, string> = {
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.HOME]: {
         path: RoutePath.home,
-        element: <>HOME</>,
+        element: <HomePage />,
     },
     [AppRoutes.BLOG]: {
         path: RoutePath.blog,
-        element: <>BLOG</>,
+        element: <BlogsPage />,
     },
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,

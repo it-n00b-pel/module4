@@ -3,6 +3,6 @@ import { setAboutData } from 'src/entities/About';
 import { nuntiumApi } from 'src/shared/api/api.ts';
 
 export const fetchAboutData = createAsyncThunk('about/fetchAboutData', async (_, thunkAPI) => {
-    const response = await nuntiumApi.getAboutrData();
+    const response = await nuntiumApi.getAboutData();
     thunkAPI.dispatch(setAboutData({ data: response.data }));
 });

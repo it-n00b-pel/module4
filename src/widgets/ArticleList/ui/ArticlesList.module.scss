@@ -1,0 +1,23 @@
+.articlesList {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+
+  .articlesList__title {
+    font-size: 42px;
+    font-weight: 700;
+    position: relative;
+    color: #1C1C1C;
+  }
+
+  .articlesList__title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    padding-top: 3px;
+    margin-left: 85px;
+    border-bottom: 3px solid #1C1C1C;
+  }
+}

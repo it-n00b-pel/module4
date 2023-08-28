@@ -3,10 +3,11 @@ import { AboutActionType } from 'src/entities/About';
 import {
     BannerActionType,
 } from 'src/entities/Banner/model/slice/bannerSlice.ts';
+import { ArticleListActionType } from 'src/widgets/ArticleList';
 
 import { createReduxStore } from '../config/store';
 
-export type AppActionsType = BannerActionType | AboutActionType
+export type AppActionsType = BannerActionType | AboutActionType | ArticleListActionType
 
 const store = createReduxStore();
 
