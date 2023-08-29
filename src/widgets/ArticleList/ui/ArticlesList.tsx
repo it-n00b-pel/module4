@@ -20,7 +20,7 @@ export const ArticlesList = ({ isFullList }:ArticlesListPropsType) => {
     return (
         <div className={style.articlesList}>
             <h2 className={style.articlesList__title}>Editor’s Picks</h2>
-            {list.map((article) => <ArticleCard acticle={article} key={article.id} />)}
+            {list.map((article) => <ArticleCard article={article} key={article.id} />)}
         </div>
     );
 };

@@ -1,13 +1,12 @@
 import { ThunkAction, ThunkDispatch } from 'redux-thunk';
-import { AboutActionType } from 'src/entities/About';
-import {
-    BannerActionType,
-} from 'src/entities/Banner/model/slice/bannerSlice.ts';
+import { BannerActionType } from 'src/entities/Banner/model/slice/bannerSlice.ts';
+import { AboutActionType } from 'src/widgets/About';
 import { ArticleListActionType } from 'src/widgets/ArticleList';
+import { BlogDataActionType } from 'src/widgets/Blog/model/slice/blogSlice.ts';
 
 import { createReduxStore } from '../config/store';
 
-export type AppActionsType = BannerActionType | AboutActionType | ArticleListActionType
+export type AppActionsType = BannerActionType | AboutActionType | ArticleListActionType | BlogDataActionType
 
 const store = createReduxStore();
 

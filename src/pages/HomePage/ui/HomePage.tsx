@@ -11,10 +11,12 @@ const HomePage = () => {
         dispatch(fetchArticleList());
     }, []);
     return (
-        <>
-            <Banner />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            <Banner positionText="top" />
             <ArticlesList isFullList={false} />
-        </>
+            <Banner positionText="left" />
+
+        </div>
     );
 };
 

@@ -1,16 +1,19 @@
 import { useEffect } from 'react';
 
 import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
-import { About, getSeoData } from 'src/widgets/About';
-import { fetchAboutData } from 'src/widgets/About/model/services/fetchAboutData.ts';
+import { BlogData, fetchBlogData, getBlogSeoData } from 'src/widgets/Blog';
 
-const AboutPage = () => {
+const BlogDetails = () => {
+    const params = useParams();
     const dispatch = useAppDispatch();
-    const seoData = useAppSelector(getSeoData);
+    const seoData = useAppSelector(getBlogSeoData);
 
     useEffect(() => {
-        dispatch(fetchAboutData());
+        if (params.id) {
+            dispatch(fetchBlogData(+params.id));
+        }
     }, []);
 
     if (!seoData) return null;
@@ -21,9 +24,9 @@ const AboutPage = () => {
                 <meta name="description" content={seoData.description} />
                 <meta name="keywords" content={seoData.keywords} />
             </Helmet>
-            <About />
+            <BlogData />
         </>
     );
 };
 
-export default AboutPage;
+export default BlogDetails;

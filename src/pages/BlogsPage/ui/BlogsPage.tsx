@@ -12,7 +12,7 @@ const BlogsPage = () => {
     }, []);
     return (
         <>
-            <Banner />
+            <Banner positionText="top" />
             <ArticlesList isFullList />
         </>
     );

@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
-import { AboutSchema } from 'src/entities/About';
 import { ArticlePromoSchema } from 'src/entities/Banner';
+import { AboutSchema } from 'src/widgets/About';
+import { BlogDataSchema } from 'src/widgets/Blog/model/types/blog.ts';
 
 // export const instance = axios.create({
 //     baseURL: 'https://course.vue.panfilov.academy/',
@@ -15,5 +16,8 @@ export const nuntiumApi = {
     },
     getArticles(): Promise<AxiosResponse<Array<ArticlePromoSchema>>> {
         return axios.get('https://course.vue.panfilov.academy/rest/v1/blog/articles');
+    },
+    getBlogData(id: number): Promise<AxiosResponse<BlogDataSchema>> {
+        return axios.get(`https://course.vue.panfilov.academy/rest/v1/blog/article/${id}`);
     },
 };

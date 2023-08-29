@@ -8,3 +8,5 @@ export type ArticlePromoSchema = {
     readTime: number,
     description: string
 }
+
+export type BannerTextPosition = 'top' | 'left'
