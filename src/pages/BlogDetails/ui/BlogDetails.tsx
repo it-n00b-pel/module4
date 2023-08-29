@@ -14,7 +14,7 @@ const BlogDetails = () => {
         if (params.id) {
             dispatch(fetchBlogData(+params.id));
         }
-    }, []);
+    }, [params.id]);
 
     if (!seoData) return null;
     return (

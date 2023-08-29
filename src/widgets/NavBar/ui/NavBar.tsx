@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
-import { SidebarItemsList } from 'src/shared/config/routeConfig/routeConfig.tsx';
+import { RoutePath, SidebarItemsList } from 'src/shared/config/routeConfig/routeConfig.tsx';
 
 import style from './NavBar.module.scss';
 import logo from '../../../shared/assets/icons/logo.svg';
@@ -22,9 +22,9 @@ const NavBar = memo(() => {
 
     return (
         <header className={style.header}>
-            <a href="/" className={classNames({ [style.header__logo__isActive]: isActive })}>
+            <Link to={RoutePath.home} className={classNames({ [style.header__logo__isActive]: isActive })}>
                 <img src={logo} alt="logo" className={style.header__img} />
-            </a>
+            </Link>
             <nav className={style.header__links}>
                 {itemsList}
             </nav>

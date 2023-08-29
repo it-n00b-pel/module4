@@ -1,0 +1,90 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  .blog__img {
+    height: 592px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+  }
+
+  .blog__text {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+    .blog__title {
+      font-family: "Libre Baskerville", sans-serif;
+      font-size: 42px;
+    }
+
+    .blog__author, .blog__tag {
+      color: #1C1C1C80;
+      font-size: 16px;
+    }
+
+    .blog__description {
+      text-align: left;
+    }
+  }
+
+  .blog__authorBlock {
+    display: flex;
+    flex-direction: column;
+    max-width: 650px;
+    gap: 30px;
+
+    h3 {
+      color: rgba(28, 28, 28, 0.5);
+      font-size: 20px;
+    }
+
+    .blog__authorData {
+      display: flex;
+      gap: 30px;
+    }
+
+    .blog__authorAbout{
+      .blog__authorName {
+        font-family: "Libre Baskerville", sans-serif;
+        font-size: 33px;
+        font-weight: 700;
+      }
+
+      .blog__authorNick{
+        color: rgba(28, 28, 28, 0.5);
+        font-size: 16px;
+        padding-bottom: 20px;
+      }
+
+      .blog__authorAboutText {
+        color: #1C1C1C;
+      }
+    }
+  }
+
+  .blog__navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: "Libre Baskerville", sans-serif;
+
+    .blog__leftArrow, .blog__rightArrow  {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .blog__leftArrow img, .blog__rightArrow img {
+      height: 50px;
+    }
+  }
+}
