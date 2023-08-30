@@ -1,4 +1,4 @@
-import { memo, useEffect } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
 import { ArticleCardText } from 'src/entities/ArticleCard';
@@ -29,10 +29,24 @@ export const Banner = memo(({ positionText }:BannerPropsType) => {
         dispatch(fetchBannerData());
     }, []);
 
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const checkScreenSize = () => {
+        setIsSmallScreen(window.innerWidth < 425);
+    };
+
+    useEffect(() => {
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
+
     return (
         <div
             className={style.banner}
-            style={{ backgroundImage: `url(${image})` }}
+            style={isSmallScreen ? { backgroundImage: 'none' } : { backgroundImage: `url(${image})` }}
         >
             <ArticleCardText
                 author={author}

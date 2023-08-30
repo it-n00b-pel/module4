@@ -5,41 +5,8 @@
   position: relative;
   background-repeat: no-repeat;
 
-  .banner__card {
-    position: absolute;
-    left: 40px;
-    width: 510px;
-    height:  510px;
-    background: #fff;
-    padding: 50px 30px 80px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .banner__tag{
-      color: #1C1C1C80;
-      font-size: 20px;
-    }
-
-    .banner__title{
-      font-family: "Libre Baskerville", sans-serif;
-      font-size: 33px;
-    }
-
-    .banner__title:hover{
-      text-decoration: underline;
-    }
-
-    .banner__author {
-      color: #1C1C1C80;
-      font-size: 16px;
-    }
-
-    .banner__description {
-      font-size: 16px;
-    }
-
-
+  @media only screen and (max-width: 425px) {
+    height: auto;
   }
 }
 

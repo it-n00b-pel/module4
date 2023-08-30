@@ -1,5 +1,4 @@
-import { CSSProperties } from 'react';
-
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { BannerTextPosition } from 'src/entities/Banner';
 import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
@@ -18,8 +17,15 @@ type ArticleCardTextPropsType = {
 }
 
 export const ArticleCardText = ({
-    id, tag, title, description, readTime, createdAt, author, positionText,
-}:ArticleCardTextPropsType) => {
+    id,
+    tag,
+    title,
+    description,
+    readTime,
+    createdAt,
+    author,
+    positionText,
+}: ArticleCardTextPropsType) => {
     const time = `(${Math.round(readTime / 60)} mins read)`;
 
     const date = new Date(createdAt);
@@ -32,24 +38,21 @@ export const ArticleCardText = ({
         dataAuthor = `${author} · ${formattedDate} ${time}`;
     }
 
-    const prop = ():CSSProperties => {
-        switch (positionText) {
-        case 'top':
-            return { position: 'absolute', left: '40px', padding: '30px' };
-        case 'left':
-            return {
-                position: 'absolute', right: '40px', top: '40px', padding: '30px',
-            };
-
-        default:
-            return {};
-        }
-    };
-
     return (
-        <div className={style.articleCard__text} style={prop()}>
+        <div className={classNames(
+            { [style.articleCard__textTop]: positionText === 'top' },
+            { [style.articleCard__textLeft]: positionText === 'left' },
+            style.articleCard__text,
+        )}
+        >
+
             <p className={style.articleCard__tag}>{tag}</p>
-            <Link to={`${RoutePath.blog_details}${id}`} className={style.articleCard__title}>{title}</Link>
+            <Link
+                to={`${RoutePath.blog_details}${id}`}
+                className={style.articleCard__title}
+            >
+                {title}
+            </Link>
             <p className={style.articleCard__author}>{dataAuthor}</p>
             {/* eslint-disable-next-line react/no-danger */}
             <p dangerouslySetInnerHTML={{ __html: description }} className={style.articleCard__description} />
