@@ -4,6 +4,8 @@ import { useAppDispatch } from 'src/app/providers/StoreProvider/config/store.ts'
 import { Banner } from 'src/entities/Banner';
 import { ArticlesList, fetchArticleList } from 'src/widgets/ArticleList';
 
+import srtle from './HomePage.module.scss';
+
 const HomePage = () => {
     const dispatch = useAppDispatch();
 
@@ -12,7 +14,7 @@ const HomePage = () => {
         document.title = 'nuntium';
     }, []);
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+        <div className={srtle.homePage}>
             <Banner positionText="top" />
             <ArticlesList isFullList={false} />
             <Banner positionText="left" />

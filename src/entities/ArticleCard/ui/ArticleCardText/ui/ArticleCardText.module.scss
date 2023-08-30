@@ -8,8 +8,15 @@
   background-color: white;
   padding: 30px;
 
+
+  @media only screen and (max-width: 768px) {
+    //padding-left: 0;
+    padding-right: 0;
+  }
+
   @media only screen and (max-width: 600px) {
-    width: 320px;
+    width: 100%;
+    padding: 0;
   }
 
   @media only screen and (max-width: 425px) {

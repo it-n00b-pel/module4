@@ -64,15 +64,17 @@ export const BlogData = () => {
                         <p className={style.blog__authorAboutText}>{author.about}</p>
                     </div>
                 </div>
+                <p className={style.blog__authorAboutText__condition}>{author.about}</p>
+
             </div>
 
             <div className={style.blog__navigation}>
                 <Link to={`${RoutePath.blog_details}${prevId}`} className={style.blog__leftArrow}>
                     <img src={leftArrow} alt="" />
-                    <p>Go Back</p>
+                    <p className={style.blog__navigationText}>Go Back</p>
                 </Link>
                 <Link to={`${RoutePath.blog_details}${nextId}`} className={style.blog__rightArrow}>
-                    <p>Next up</p>
+                    <p className={style.blog__navigationText}>Next up</p>
                     <img src={rightArrow} alt="" />
                 </Link>
             </div>

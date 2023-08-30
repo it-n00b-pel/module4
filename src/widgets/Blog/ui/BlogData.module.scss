@@ -23,15 +23,27 @@
     .blog__title {
       font-family: "Libre Baskerville", sans-serif;
       font-size: 42px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 24px;
+      }
     }
 
     .blog__author, .blog__tag {
       color: #1C1C1C80;
       font-size: 16px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+      }
     }
 
     .blog__description {
       text-align: left;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -41,31 +53,82 @@
     max-width: 650px;
     gap: 30px;
 
-    h3 {
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+      //gap: 20px;
+    }
+
+    @media only screen and (max-width: 425px) {
+      width: 100%;
+    }
+
+    & h3 {
       color: rgba(28, 28, 28, 0.5);
       font-size: 20px;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 14px;
+      }
     }
 
     .blog__authorData {
       display: flex;
       gap: 30px;
+
+      @media only screen and (max-width: 425px) {
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .blog__authorImg {
+        width: 25%;
+        height: 25%;
+      }
     }
 
-    .blog__authorAbout{
+    .blog__authorAbout {
+
       .blog__authorName {
         font-family: "Libre Baskerville", sans-serif;
         font-size: 33px;
         font-weight: 700;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 24px;
+          padding-bottom: 10px;
+        }
       }
 
-      .blog__authorNick{
+      .blog__authorNick {
         color: rgba(28, 28, 28, 0.5);
         font-size: 16px;
         padding-bottom: 20px;
+
+        @media only screen and (max-width: 768px) {
+          display: none;
+        }
       }
 
       .blog__authorAboutText {
         color: #1C1C1C;
+
+        @media only screen and (max-width: 768px) {
+          font-size: 14px;
+        }
+
+        @media only screen and (max-width: 425px) {
+          display: none;
+        }
+      }
+    }
+
+    .blog__authorAboutText__condition {
+      display: none;
+
+      @media only screen and (max-width: 425px) {
+        font-size: 14px;
+        display: flex;
       }
     }
   }
@@ -74,17 +137,34 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    font-size: 20px;
-    font-family: "Libre Baskerville", sans-serif;
 
-    .blog__leftArrow, .blog__rightArrow  {
+    .blog__navigationText {
+      font-size: 20px;
+      font-family: "Libre Baskerville", sans-serif;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 12px;
+      }
+
+      @media only screen and (max-width: 425px) {
+        display: none;
+      }
+    }
+
+    .blog__leftArrow, .blog__rightArrow {
       display: flex;
       align-items: center;
       gap: 30px;
     }
 
     .blog__leftArrow img, .blog__rightArrow img {
-      height: 50px;
+
+      @media only screen and (max-width: 1024px) {
+        width: 100px;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 50px;
+      }
     }
   }
 }
