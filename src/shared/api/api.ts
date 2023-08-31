@@ -1,23 +1,23 @@
 import axios, { AxiosResponse } from 'axios';
-import { ArticlePromoSchema } from 'src/entities/Banner';
-import { AboutSchema } from 'src/widgets/About';
-import { BlogDataSchema } from 'src/widgets/Blog/model/types/blog.ts';
+import { ArticlePromoResponse } from 'src/entities/Banner';
+import { AboutResponse } from 'src/widgets/About';
+import { BlogDataResponse } from 'src/widgets/Blog/model/types/blog.ts';
 
-// export const instance = axios.create({
-//     baseURL: 'https://course.vue.panfilov.academy/',
-// });
+export const instance = axios.create({
+    baseURL: 'https://course.vue.panfilov.academy/',
+});
 
 export const nuntiumApi = {
-    getBannerData(): Promise<AxiosResponse<ArticlePromoSchema>> {
-        return axios.get('https://course.vue.panfilov.academy/rest/v1/blog/featured');
+    getBannerData(): Promise<AxiosResponse<ArticlePromoResponse>> {
+        return instance.get('rest/v1/blog/featured');
     },
-    getAboutData(): Promise<AxiosResponse<AboutSchema>> {
-        return axios.get('https://course.vue.panfilov.academy/rest/v1/about');
+    getAboutData(): Promise<AxiosResponse<AboutResponse>> {
+        return instance.get('rest/v1/about');
     },
-    getArticles(): Promise<AxiosResponse<Array<ArticlePromoSchema>>> {
-        return axios.get('https://course.vue.panfilov.academy/rest/v1/blog/articles');
+    getArticles(): Promise<AxiosResponse<Array<ArticlePromoResponse>>> {
+        return instance.get('rest/v1/blog/articles');
     },
-    getBlogData(id: number): Promise<AxiosResponse<BlogDataSchema>> {
-        return axios.get(`https://course.vue.panfilov.academy/rest/v1/blog/article/${id}`);
+    getBlogData(id: number): Promise<AxiosResponse<BlogDataResponse>> {
+        return instance.get(`rest/v1/blog/article/${id}`);
     },
 };

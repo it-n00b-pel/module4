@@ -1,3 +1,3 @@
-import { AppRootStateType } from 'src/app/providers/StoreProvider/types/type.ts';
+import { StateSchema } from 'src/app/providers/StoreProvider/config/StateSchema.ts';
 
-export const getArticlesList = (state: AppRootStateType) => state.articlesList.articleList;
+export const getArticlesList = (state: StateSchema) => state.articlesList.data;

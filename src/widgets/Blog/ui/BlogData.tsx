@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom';
-import { useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
+import { useEffect } from 'react';
+
+import { Helmet } from 'react-helmet';
+import { Link, useParams } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
 import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
-import { getAllBlogData } from 'src/widgets/Blog';
+import { getBlogData } from 'src/widgets/ArticleList/model/selectors/getBlogData/getBlogData.ts';
+import { fetchBlogData } from 'src/widgets/Blog';
 
 import style from './BlogData.module.scss';
 import leftArrow from '../../../shared/assets/icons/leftArrow.svg';
@@ -9,75 +13,86 @@ import rightArrow from '../../../shared/assets/icons/rightArrow.jpg';
 import authorImg from '../../../shared/assets/img/author.png';
 
 export const BlogData = () => {
-    const {
-        tag,
-        createdAt,
-        image,
-        author,
-        readTime,
-        description,
-        title,
-        prevId,
-        nextId,
-    } = useAppSelector(getAllBlogData);
+    const params = useParams();
+    const dispatch = useAppDispatch();
 
-    const time = `(${Math.round(+readTime / 60)} mins read)`;
+    useEffect(() => {
+        if (params.id) {
+            dispatch(fetchBlogData(+params.id));
+        }
+    }, [params.id]);
 
-    const date = new Date(createdAt);
+    const blog = useAppSelector(getBlogData);
+
+    if (!blog) {
+        return null;
+    }
+
+    const time = `(${Math.round(+blog.readTime / 60)} mins read)`;
+
+    const date = new Date(blog.createdAt);
     const options = { month: 'long', day: 'numeric', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-US', options as Intl.DateTimeFormatOptions);
 
     let dataAuthor = '';
 
-    if (author) {
-        dataAuthor = `${author.name} · ${formattedDate} ${time}`;
+    if (blog.author) {
+        dataAuthor = `${blog.author.name} · ${formattedDate} ${time}`;
     }
 
     return (
-        <div className={style.blog}>
-            <div
-                className={style.blog__img}
-                style={{ backgroundImage: `url(${image})` }}
-            />
-            <div className={style.blog__text}>
-                <h3 className={style.blog__title}>{title}</h3>
-                <p className={style.blog__author}>{dataAuthor}</p>
-                <p className={style.blog__tag}>
-                    #
-                    {tag.name}
-                </p>
+        <>
+            <Helmet>
+                <title>{blog.seo.title}</title>
+                <meta name="description" content={blog.seo.description} />
+                <meta name="keywords" content={blog.seo.keywords} />
+            </Helmet>
 
-                {/* eslint-disable-next-line react/no-danger */}
-                <p dangerouslySetInnerHTML={{ __html: description }} className={style.blog__description} />
-            </div>
+            <div className={style.blog}>
+                <div
+                    className={style.blog__img}
+                    style={{ backgroundImage: `url(${blog.image})` }}
+                />
+                <div className={style.blog__text}>
+                    <h3 className={style.blog__title}>{blog.title}</h3>
+                    <p className={style.blog__author}>{dataAuthor}</p>
+                    <p className={style.blog__tag}>
+                        #
+                        {blog.tag.name}
+                    </p>
 
-            <div className={style.blog__authorBlock}>
-                <h3>ABOUT AUTHOR</h3>
-                <div className={style.blog__authorData}>
-                    <img src={authorImg} alt="" className={style.blog__authorImg} />
-                    <div className={style.blog__authorAbout}>
-                        <h4 className={style.blog__authorName}>{author.name}</h4>
-                        <p className={style.blog__authorNick}>
-                            @
-                            {author.nick}
-                        </p>
-                        <p className={style.blog__authorAboutText}>{author.about}</p>
-                    </div>
+                    {/* eslint-disable-next-line react/no-danger */}
+                    <p dangerouslySetInnerHTML={{ __html: blog.description }} className={style.blog__description} />
                 </div>
-                <p className={style.blog__authorAboutText__condition}>{author.about}</p>
 
-            </div>
+                <div className={style.blog__authorBlock}>
+                    <h3>ABOUT AUTHOR</h3>
+                    <div className={style.blog__authorData}>
+                        <img src={authorImg} alt="" className={style.blog__authorImg} />
+                        <div className={style.blog__authorAbout}>
+                            <h4 className={style.blog__authorName}>{blog.author.name}</h4>
+                            <p className={style.blog__authorNick}>
+                                @
+                                {blog.author.nick}
+                            </p>
+                            <p className={style.blog__authorAboutText}>{blog.author.about}</p>
+                        </div>
+                    </div>
+                    <p className={style.blog__authorAboutText__condition}>{blog.author.about}</p>
 
-            <div className={style.blog__navigation}>
-                <Link to={`${RoutePath.blog_details}${prevId}`} className={style.blog__leftArrow}>
-                    <img src={leftArrow} alt="leftArrow" title="leftArrow" />
-                    <p className={style.blog__navigationText}>Go Back</p>
-                </Link>
-                <Link to={`${RoutePath.blog_details}${nextId}`} className={style.blog__rightArrow}>
-                    <p className={style.blog__navigationText}>Next up</p>
-                    <img src={rightArrow} alt="rightArrow" title="rightArrow" />
-                </Link>
+                </div>
+
+                <div className={style.blog__navigation}>
+                    <Link to={`${RoutePath.blog_details}${blog.prevId}`} className={style.blog__leftArrow}>
+                        <img src={leftArrow} alt="leftArrow" title="leftArrow" />
+                        <p className={style.blog__navigationText}>Go Back</p>
+                    </Link>
+                    <Link to={`${RoutePath.blog_details}${blog.nextId}`} className={style.blog__rightArrow}>
+                        <p className={style.blog__navigationText}>Next up</p>
+                        <img src={rightArrow} alt="rightArrow" title="rightArrow" />
+                    </Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 };

@@ -7,3 +7,4 @@ export {
 } from './model/slice/bannerSlice.ts';
 
 export { getBannersData } from './model/selectors/getBannersData/getBannersData.ts';
+export type { ArticlePromoResponse } from './model/types/banner.ts';

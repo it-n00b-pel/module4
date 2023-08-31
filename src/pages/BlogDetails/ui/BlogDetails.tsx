@@ -1,32 +1,18 @@
-import { useEffect } from 'react';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'src/shared/DynamicModuleLoader/DynamicModuleLoader.tsx';
+import { BlogData, blogReducer } from 'src/widgets/Blog';
 
-import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
-import { BlogData, fetchBlogData, getBlogSeoData } from 'src/widgets/Blog';
-
-const BlogDetails = () => {
-    const params = useParams();
-    const dispatch = useAppDispatch();
-    const seoData = useAppSelector(getBlogSeoData);
-
-    useEffect(() => {
-        if (params.id) {
-            dispatch(fetchBlogData(+params.id));
-        }
-    }, [params.id]);
-
-    if (!seoData) return null;
-    return (
-        <>
-            <Helmet>
-                <title>{seoData.title}</title>
-                <meta name="description" content={seoData.description} />
-                <meta name="keywords" content={seoData.keywords} />
-            </Helmet>
-            <BlogData />
-        </>
-    );
+const reducers: ReducersList = {
+    blog: blogReducer,
 };
+
+const BlogDetails = () => (
+    <DynamicModuleLoader reducers={reducers}>
+
+        <BlogData />
+    </DynamicModuleLoader>
+);
 
 export default BlogDetails;

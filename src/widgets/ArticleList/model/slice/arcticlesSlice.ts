@@ -1,14 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ArticlePromoSchema } from 'src/entities/Banner';
+import { ArticlePromoResponse } from 'src/entities/Banner';
+import { ArticlesListSchema } from 'src/widgets/ArticleList/model/types/type.ts';
+
+const initialState:ArticlesListSchema = {
+    data: undefined,
+};
 
 const slice = createSlice({
     name: 'articleList',
-    initialState: {
-        articleList: [] as Array <ArticlePromoSchema>,
-    },
+    initialState,
     reducers: {
-        setList(state, action: PayloadAction<{data: Array <ArticlePromoSchema>}>) {
-            state.articleList = action.payload.data;
+        setList(state, action: PayloadAction<{data: Array <ArticlePromoResponse>}>) {
+            state.data = action.payload.data;
         },
     },
 });

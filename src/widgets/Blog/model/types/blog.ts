@@ -1,4 +1,8 @@
 export type BlogDataSchema = {
+    data?: BlogDataResponse;
+}
+
+export type BlogDataResponse = {
     id: number,
     title: string,
     seo: {

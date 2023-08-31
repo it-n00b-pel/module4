@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom';
-import { ArticlePromoSchema } from 'src/entities/Banner';
+import { ArticlePromoResponse } from 'src/entities/Banner';
 import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
 
 import style from './ArticleCard.module.scss';
 import { ArticleCardText } from './ArticleCardText/ui/ArticleCardText.tsx';
 
 type ArticleCardPropsType = {
-    article: ArticlePromoSchema
+    article: ArticlePromoResponse
 }
 
 export const ArticleCard = ({ article }: ArticleCardPropsType) => {
+    if (!article) {
+        return null;
+    }
+
     const {
         author,
         id,

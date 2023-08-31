@@ -6,13 +6,13 @@ import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
 import style from './ArticleCardText.module.scss';
 
 type ArticleCardTextPropsType = {
-    author: string,
-    id: number
-    tag: string,
-    title: string
-    description: string
-    readTime: number
-    createdAt: number
+    author?: string,
+    id?: number
+    tag?: string,
+    title?: string
+    description?: string
+    readTime?: number
+    createdAt?: number
     positionText?: BannerTextPosition
 }
 
@@ -26,6 +26,10 @@ export const ArticleCardText = ({
     author,
     positionText,
 }: ArticleCardTextPropsType) => {
+    if (!readTime || !createdAt) {
+        return null;
+    }
+
     const time = `(${Math.round(readTime / 60)} mins read)`;
 
     const date = new Date(createdAt);
@@ -54,8 +58,13 @@ export const ArticleCardText = ({
                 {title}
             </Link>
             <p className={style.articleCard__author}>{dataAuthor}</p>
-            {/* eslint-disable-next-line react/no-danger */}
-            <p dangerouslySetInnerHTML={{ __html: description }} className={style.articleCard__description} />
+
+            {description && (
+                <p
+                    dangerouslySetInnerHTML={{ __html: description }}
+                    className={style.articleCard__description}
+                />
+            )}
         </div>
     );
 };

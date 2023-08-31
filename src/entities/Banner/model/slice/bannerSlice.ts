@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ArticlePromoSchema } from '../types/banner.ts';
+import { ArticlePromoResponse, ArticlePromoSchema } from '../types/banner.ts';
+
+const initialState : ArticlePromoSchema = {
+    data: undefined,
+};
 
 const slice = createSlice({
     name: 'banner',
-    initialState: {
-        bannerData: {} as ArticlePromoSchema,
-    },
+    initialState,
     reducers: {
-        setBannerData(state, action: PayloadAction<{data: ArticlePromoSchema}>) {
-            state.bannerData = action.payload.data;
+        setBannerData(state, action: PayloadAction<{data: ArticlePromoResponse}>) {
+            state.data = action.payload.data;
         },
     },
 });

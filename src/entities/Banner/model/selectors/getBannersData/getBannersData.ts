@@ -1,3 +1,3 @@
-import { AppRootStateType } from 'src/app/providers/StoreProvider/types/type.ts';
+import { StateSchema } from 'src/app/providers/StoreProvider/config/StateSchema.ts';
 
-export const getBannersData = (state: AppRootStateType) => state.banner.bannerData;
+export const getBannersData = (state: StateSchema) => state.banner.data;

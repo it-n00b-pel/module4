@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { BlogDataSchema } from '../types/blog.ts';
+import { BlogDataResponse, BlogDataSchema } from '../types/blog.ts';
+
+const initialState:BlogDataSchema = {
+    data: undefined,
+};
 
 const slice = createSlice({
     name: 'blogData',
-    initialState: {
-        blogData: {} as BlogDataSchema,
-    },
+    initialState,
     reducers: {
-        setBlogData(state, action: PayloadAction<{data: BlogDataSchema}>) {
-            state.blogData = action.payload.data;
+        setBlogData(state, action: PayloadAction<{data: BlogDataResponse}>) {
+            state.data = action.payload.data;
         },
     },
 });

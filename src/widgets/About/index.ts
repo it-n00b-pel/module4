@@ -1,4 +1,4 @@
-export type { AboutSchema } from './model/types/about.ts';
+export type { AboutSchema, AboutResponse } from './model/types/about.ts';
 
 export { setAboutData, aboutReducer } from './model/slice/aboutSlice.ts';
 export type { AboutActionType } from './model/slice/aboutSlice.ts';

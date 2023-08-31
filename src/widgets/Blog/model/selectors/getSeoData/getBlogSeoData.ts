@@ -1,3 +1,3 @@
-import { AppRootStateType } from 'src/app/providers/StoreProvider/types/type.ts';
+import { StateSchema } from 'src/app/providers/StoreProvider/config/StateSchema.ts';
 
-export const getBlogSeoData = (state: AppRootStateType) => state.blog.blogData.seo;
+export const getBlogSeoData = (state: StateSchema) => state.blog?.data?.seo;

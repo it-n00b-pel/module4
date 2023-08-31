@@ -2,14 +2,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { AboutSchema } from '../types/about.ts';
 
+const initialState: AboutSchema = {
+    data: undefined,
+};
+
 const slice = createSlice({
     name: 'about',
-    initialState: {
-        aboutData: {} as AboutSchema,
-    },
+    initialState,
     reducers: {
         setAboutData(state, action: PayloadAction<{data: AboutSchema}>) {
-            state.aboutData = action.payload.data;
+            state.data = action.payload.data.data;
         },
     },
 });
