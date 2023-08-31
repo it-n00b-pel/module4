@@ -1,8 +1,5 @@
-import { useEffect } from 'react';
-
-import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
+import { useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
 import { ArticleCard } from 'src/entities/ArticleCard';
-import { fetchArticleList } from 'src/widgets/ArticleList';
 
 import style from './ArticlesList.module.scss';
 import { getArticlesList } from '../model/selectors/getArticleList/getArticlesList.ts';
@@ -15,12 +12,6 @@ export const ArticlesList = ({ isFullList }:ArticlesListPropsType) => {
     const articlesList = useAppSelector(getArticlesList);
 
     let list = articlesList;
-
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(fetchArticleList());
-    }, []);
 
     if (!isFullList && articlesList && articlesList.length > 3) {
         list = articlesList.slice(0, 3);

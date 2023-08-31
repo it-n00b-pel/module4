@@ -8,7 +8,6 @@ import srtle from './HomePage.module.scss';
 
 const HomePage = () => {
     const dispatch = useAppDispatch();
-
     useEffect(() => {
         dispatch(fetchArticleList());
         document.title = 'nuntium';
