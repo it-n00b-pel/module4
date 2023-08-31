@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
+    base: 'https://it-n00b-pel.github.io/module4/',
     resolve: {
         alias: {
             src: '/src',

@@ -1,6 +1,7 @@
 {
   "name": "module4",
-  "private": true,
+  "private": false,
+  "homepage": "https://it-n00b-pel.github.io/module4/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
