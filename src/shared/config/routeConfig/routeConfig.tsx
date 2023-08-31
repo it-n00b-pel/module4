@@ -18,10 +18,10 @@ export enum AppRoutes {
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.HOME]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.BLOG]: '/blog/',
-    [AppRoutes.BLOG_DETAILS]: '/blog/article/',
+    [AppRoutes.HOME]: 'module4/',
+    [AppRoutes.ABOUT]: 'module4/about',
+    [AppRoutes.BLOG]: 'module4/blog/',
+    [AppRoutes.BLOG_DETAILS]: '/module4/blog/article/',
     // последний
     [AppRoutes.NOT_FOUND]: '*',
 };
