@@ -40,6 +40,28 @@ export const BlogData = () => {
         dataAuthor = `${blog.author.name} · ${formattedDate} ${time}`;
     }
 
+    const checkPrevArrow = () => (blog.prevId ? (
+        <Link
+            to={`${RoutePath.blog_details}${blog.prevId}`}
+            className={style.blog__leftArrow}
+        >
+            <img src={leftArrow} alt="leftArrow" title="leftArrow" />
+            <p className={style.blog__navigationText}>Go Back</p>
+        </Link>
+    )
+        : <></>);
+
+    const checkNextArrow = () => (blog.nextId ? (
+        <Link
+            to={`${RoutePath.blog_details}${blog.nextId}`}
+            className={style.blog__rightArrow}
+        >
+            <p className={style.blog__navigationText}>Next up</p>
+            <img src={rightArrow} alt="rightArrow" title="rightArrow" />
+        </Link>
+    )
+        : <></>);
+
     return (
         <>
             <Helmet>
@@ -83,14 +105,18 @@ export const BlogData = () => {
                 </div>
 
                 <div className={style.blog__navigation}>
-                    <Link to={`${RoutePath.blog_details}${blog.prevId}`} className={style.blog__leftArrow}>
-                        <img src={leftArrow} alt="leftArrow" title="leftArrow" />
-                        <p className={style.blog__navigationText}>Go Back</p>
-                    </Link>
-                    <Link to={`${RoutePath.blog_details}${blog.nextId}`} className={style.blog__rightArrow}>
-                        <p className={style.blog__navigationText}>Next up</p>
-                        <img src={rightArrow} alt="rightArrow" title="rightArrow" />
-                    </Link>
+                    {/* {blog.prevId && ( */}
+                    {/*    <Link */}
+                    {/*        to={`${RoutePath.blog_details}${blog.prevId}`} */}
+                    {/*        className={style.blog__leftArrow} */}
+                    {/*    > */}
+                    {/*        <img src={leftArrow} alt="leftArrow" title="leftArrow" /> */}
+                    {/*        <p className={style.blog__navigationText}>Go Back</p> */}
+                    {/*    </Link> */}
+                    {/* )} */}
+
+                    {checkPrevArrow()}
+                    {checkNextArrow()}
                 </div>
             </div>
         </>

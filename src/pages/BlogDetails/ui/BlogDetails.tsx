@@ -10,7 +10,6 @@ const reducers: ReducersList = {
 
 const BlogDetails = () => (
     <DynamicModuleLoader reducers={reducers}>
-
         <BlogData />
     </DynamicModuleLoader>
 );
