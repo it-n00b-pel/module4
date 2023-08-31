@@ -25,7 +25,13 @@ const NavBar = memo(() => {
 
     return (
         <header className={style.header}>
-            <Link to={RoutePath.home} className={classNames({ [style.header__logo__isActive]: isActive })}>
+            <Link
+                to={RoutePath.home}
+                className={classNames(
+                    { [style.header__logo__isActive]: isActive },
+                    { [style.header__logo__transform]: !isActive },
+                )}
+            >
                 <img src={logo} alt="logo" className={style.header__img} />
             </Link>
             <nav

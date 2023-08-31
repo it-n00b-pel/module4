@@ -1,11 +1,9 @@
 .articleCard {
   display: flex;
   gap: 30px;
-
   @media only screen and (max-width: 768px) {
     gap: 0;
   }
-
   @media only screen and (max-width: 600px) {
     flex-direction: column;
   }
@@ -13,11 +11,9 @@
   .articleCard__img {
     margin-top: 30px;
     width: 368px;
-
     @media only screen and (max-width: 600px) {
       width: 100%;
     }
   }
-
-
 }
+

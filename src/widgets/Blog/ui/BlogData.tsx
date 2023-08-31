@@ -70,12 +70,12 @@ export const BlogData = () => {
 
             <div className={style.blog__navigation}>
                 <Link to={`${RoutePath.blog_details}${prevId}`} className={style.blog__leftArrow}>
-                    <img src={leftArrow} alt="" />
+                    <img src={leftArrow} alt="leftArrow" title="leftArrow" />
                     <p className={style.blog__navigationText}>Go Back</p>
                 </Link>
                 <Link to={`${RoutePath.blog_details}${nextId}`} className={style.blog__rightArrow}>
                     <p className={style.blog__navigationText}>Next up</p>
-                    <img src={rightArrow} alt="" />
+                    <img src={rightArrow} alt="rightArrow" title="rightArrow" />
                 </Link>
             </div>
         </div>

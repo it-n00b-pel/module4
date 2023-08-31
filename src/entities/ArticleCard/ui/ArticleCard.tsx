@@ -24,7 +24,7 @@ export const ArticleCard = ({ article }: ArticleCardPropsType) => {
     return (
         <div className={style.articleCard}>
             <Link to={`${RoutePath.blog_details}${id}`}>
-                <img src={image} alt="" title={title} className={style.articleCard__img} />
+                <img src={image} alt={title} title={title} className={style.articleCard__img} />
             </Link>
 
             <ArticleCardText
