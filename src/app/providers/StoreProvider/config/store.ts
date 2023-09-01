@@ -6,6 +6,7 @@ import { createReducerManager } from 'src/app/providers/StoreProvider/config/red
 import { StateSchema } from 'src/app/providers/StoreProvider/config/StateSchema.ts';
 import { AppDispatch } from 'src/app/providers/StoreProvider/types/type.ts';
 import { bannerReducer } from 'src/entities/Banner';
+import { appReducer } from 'src/pages/model';
 import { articleListReducer } from 'src/widgets/ArticleList';
 
 // const rootReducer = combineReducers({
@@ -30,6 +31,7 @@ export function createReduxStore(
         ...asyncReducers,
         banner: bannerReducer,
         articlesList: articleListReducer,
+        app: appReducer,
     };
 
     const reducerManager = createReducerManager(rootReducers);

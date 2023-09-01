@@ -2,6 +2,7 @@ import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ArticlePromoSchema } from 'src/entities/Banner';
+import { AppSchema } from 'src/pages/model';
 import { AboutSchema } from 'src/widgets/About';
 import { ArticlesListSchema } from 'src/widgets/ArticleList/model/types/type.ts';
 import { BlogDataSchema } from 'src/widgets/Blog';
@@ -9,7 +10,7 @@ import { BlogDataSchema } from 'src/widgets/Blog';
 export interface StateSchema {
     banner: ArticlePromoSchema,
     articlesList: ArticlesListSchema,
-
+    app: AppSchema,
     // Асинхронные редюсеры
     about?: AboutSchema,
     blog?: BlogDataSchema,

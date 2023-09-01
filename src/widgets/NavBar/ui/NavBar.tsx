@@ -11,7 +11,7 @@ import logo from '../../../shared/assets/icons/logo.svg';
 const NavBar = memo(() => {
     const [isShowNavBar, setActive] = useState(false);
     const { pathname } = useLocation();
-    const isActive = pathname === '/';
+    const isActive = pathname === '/module4/';
     const itemsList = useMemo(() => SidebarItemsList.map((item) => (
         <Link
             to={item.path}
