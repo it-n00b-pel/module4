@@ -21,4 +21,4 @@ const slice = createSlice({
 export const appReducer = slice.reducer;
 export const { setLoading, setError } = slice.actions;
 
-export type AppActionType = ReturnType<typeof setLoading> | ReturnType<typeof setLoading>
+export type AppActionType = ReturnType<typeof setLoading> | ReturnType<typeof setError>
