@@ -1,8 +1,9 @@
 import { memo, Suspense, useCallback } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
-import { AppRoutesProps, routeConfig } from 'src/shared/config/routeConfig/routeConfig.tsx';
-import { Loader } from 'src/shared/ui/Loader/Loader.tsx';
+
+import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig.tsx';
+import { Loader } from '@/shared/ui/Loader/Loader.tsx';
 
 const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {

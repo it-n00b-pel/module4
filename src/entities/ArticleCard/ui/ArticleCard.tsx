@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { ArticlePromoResponse } from 'src/entities/Banner';
-import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
 
 import style from './ArticleCard.module.scss';
-import { ArticleCardText } from './ArticleCardText/ui/ArticleCardText.tsx';
+
+import { ArticleCardText } from '@/entities/ArticleCard';
+import { ArticlePromoResponse } from '@/entities/Banner';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig.tsx';
 
 type ArticleCardPropsType = {
     article: ArticlePromoResponse

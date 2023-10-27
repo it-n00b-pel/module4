@@ -2,26 +2,13 @@ import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { createReducerManager } from 'src/app/providers/StoreProvider/config/reducerManager.ts';
-import { StateSchema } from 'src/app/providers/StoreProvider/config/StateSchema.ts';
-import { AppDispatch } from 'src/app/providers/StoreProvider/types/type.ts';
-import { bannerReducer } from 'src/entities/Banner';
-import { appReducer } from 'src/pages/model';
-import { articleListReducer } from 'src/widgets/ArticleList';
 
-// const rootReducer = combineReducers({
-//     banner: bannerReducer,
-//     about: aboutReducer,
-//     articlesList: articleListReducer,
-//     blog: blogReducer,
-// });
-//
-// export function createReduxStore() {
-//     return configureStore({
-//         reducer: rootReducer,
-//         middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).prepend(thunkMiddleware),
-//     });
-// }
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager.ts';
+import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema.ts';
+import { AppDispatch } from '@/app/providers/StoreProvider/types/type.ts';
+import { bannerReducer } from '@/entities/Banner';
+import { appReducer } from '@/pages/model';
+import { articleListReducer } from '@/widgets/ArticleList';
 
 export function createReduxStore(
     initialState?: StateSchema,

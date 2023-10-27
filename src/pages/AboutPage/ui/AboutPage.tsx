@@ -1,8 +1,8 @@
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'src/shared/DynamicModuleLoader/DynamicModuleLoader.tsx';
-import { About, aboutReducer } from 'src/widgets/About';
+} from '@/shared/DynamicModuleLoader/DynamicModuleLoader.tsx';
+import { About, aboutReducer } from '@/widgets/About';
 
 const reducers: ReducersList = {
     about: aboutReducer,

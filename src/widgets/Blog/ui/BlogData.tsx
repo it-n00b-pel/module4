@@ -2,15 +2,16 @@ import { useEffect } from 'react';
 
 import { Helmet } from 'react-helmet';
 import { Link, useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
-import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
-import { getBlogData } from 'src/widgets/ArticleList/model/selectors/getBlogData/getBlogData.ts';
-import { fetchBlogData } from 'src/widgets/Blog';
 
 import style from './BlogData.module.scss';
 import leftArrow from '../../../shared/assets/icons/leftArrow.svg';
-import rightArrow from '../../../shared/assets/icons/rightArrow.jpg';
+import rightArrow from '../../../shared/assets/icons/rightArrow.svg';
 import authorImg from '../../../shared/assets/img/author.png';
+
+import { useAppDispatch, useAppSelector } from '@/app/providers/StoreProvider/config/store.ts';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig.tsx';
+import { getBlogData } from '@/widgets/ArticleList/model/selectors/getBlogData/getBlogData.ts';
+import { fetchBlogData } from '@/widgets/Blog';
 
 export const BlogData = () => {
     const params = useParams();
@@ -43,9 +44,11 @@ export const BlogData = () => {
     const checkPrevArrow = () => (blog.prevId ? (
         <Link
             to={`${RoutePath.blog_details}${blog.prevId}`}
-            className={style.blog__leftArrow}
+            className={style.blog__leftArrowBlock}
         >
-            <img src={leftArrow} alt="leftArrow" title="leftArrow" />
+            <div className={style.blog__leftArrowImg}>
+                <img src={leftArrow} alt="leftArrow" title="leftArrow" />
+            </div>
             <p className={style.blog__navigationText}>Go Back</p>
         </Link>
     )
@@ -54,10 +57,13 @@ export const BlogData = () => {
     const checkNextArrow = () => (blog.nextId ? (
         <Link
             to={`${RoutePath.blog_details}${blog.nextId}`}
-            className={style.blog__rightArrow}
+            className={style.blog__rightArrowBlock}
         >
             <p className={style.blog__navigationText}>Next up</p>
-            <img src={rightArrow} alt="rightArrow" title="rightArrow" />
+
+            <div className={style.blog__rightArrowImg}>
+                <img src={rightArrow} alt="rightArrow" title="rightArrow" className={style.blog__rightArrowImg} />
+            </div>
         </Link>
     )
         : <></>);
@@ -105,16 +111,6 @@ export const BlogData = () => {
                 </div>
 
                 <div className={style.blog__navigation}>
-                    {/* {blog.prevId && ( */}
-                    {/*    <Link */}
-                    {/*        to={`${RoutePath.blog_details}${blog.prevId}`} */}
-                    {/*        className={style.blog__leftArrow} */}
-                    {/*    > */}
-                    {/*        <img src={leftArrow} alt="leftArrow" title="leftArrow" /> */}
-                    {/*        <p className={style.blog__navigationText}>Go Back</p> */}
-                    {/*    </Link> */}
-                    {/* )} */}
-
                     {checkPrevArrow()}
                     {checkNextArrow()}
                 </div>

@@ -25,14 +25,8 @@
     }
 
     .about__text img {
-      float: right;
-      margin: 15px;
-      @media only screen and (max-width: 768px) {
-        margin: 10px;
-      }
-      @media only screen and (max-width: 600px) {
-        margin: 0;
-      }
+      display: block;
+      margin: 30px auto;
     }
   }
 }

@@ -1,8 +1,9 @@
 import { RouteProps } from 'react-router-dom';
-import { AboutPage } from 'src/pages/AboutPage';
-import { BlogDetails } from 'src/pages/BlogDetails';
-import { BlogsPage } from 'src/pages/BlogsPage';
-import HomePage from 'src/pages/HomePage/ui/HomePage.tsx';
+
+import { AboutPage } from '@/pages/AboutPage';
+import { BlogDetails } from '@/pages/BlogDetails';
+import { BlogsPage } from '@/pages/BlogsPage';
+import HomePage from '@/pages/HomePage/ui/HomePage.tsx';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
@@ -20,7 +21,7 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.HOME]: 'module4/',
     [AppRoutes.ABOUT]: 'module4/about',
-    [AppRoutes.BLOG]: 'module4/blog/',
+    [AppRoutes.BLOG]: 'module4/blog',
     [AppRoutes.BLOG_DETAILS]: '/module4/blog/article/',
     // последний
     [AppRoutes.NOT_FOUND]: '*',

@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import { BannerTextPosition } from 'src/entities/Banner';
-import { RoutePath } from 'src/shared/config/routeConfig/routeConfig.tsx';
 
 import style from './ArticleCardText.module.scss';
+
+import { BannerTextPosition } from '@/entities/Banner';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig.tsx';
 
 type ArticleCardTextPropsType = {
     author?: string,

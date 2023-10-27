@@ -7,8 +7,9 @@ export default defineConfig({
     base: '/module4/',
     resolve: {
         alias: {
-            src: '/src',
+            '@': '/src',
         },
+        // extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
     },
     optimizeDeps: {
         // @ts-ignore

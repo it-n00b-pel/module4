@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setBannerData } from 'src/entities/Banner';
-import { setLoading } from 'src/pages/model';
-import { nuntiumApi } from 'src/shared/api/api.ts';
+
+import { setBannerData } from '@/entities/Banner';
+import { setLoading } from '@/pages/model';
+import { nuntiumApi } from '@/shared/api/api.ts';
 
 export const fetchBannerData = createAsyncThunk('banner/fetchBannerData', async (_, thunkAPI) => {
     try {
@@ -9,7 +10,7 @@ export const fetchBannerData = createAsyncThunk('banner/fetchBannerData', async 
         const response = await nuntiumApi.getBannerData();
         thunkAPI.dispatch(setBannerData({ data: response.data }));
     } catch (e) {
-        console.warn(e);
+        console.error(e);
     } finally {
         thunkAPI.dispatch(setLoading({ isLoading: false }));
     }

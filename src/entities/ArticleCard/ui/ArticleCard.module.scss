@@ -11,6 +11,14 @@
   .articleCard__img {
     margin-top: 30px;
     width: 368px;
+    transition: 200ms;
+
+    &:hover {
+      transform: scale(1.05);
+      -webkit-box-shadow: -1px 5px 51px 30px rgba(34, 60, 80, 0.2);
+      -moz-box-shadow: -1px 5px 51px 30px rgba(34, 60, 80, 0.2);
+      box-shadow: -1px 5px 51px 30px rgba(34, 60, 80, 0.2);
+    }
     @media only screen and (max-width: 600px) {
       width: 100%;
     }

@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setLoading } from 'src/pages/model';
-import { nuntiumApi } from 'src/shared/api/api.ts';
-import { setList } from 'src/widgets/ArticleList';
+
+import { setLoading } from '@/pages/model';
+import { nuntiumApi } from '@/shared/api/api.ts';
+import { setList } from '@/widgets/ArticleList';
 
 export const fetchArticleList = createAsyncThunk('articleList/fetchArticleList', async (_, thunkAPI) => {
     try {
@@ -9,7 +10,7 @@ export const fetchArticleList = createAsyncThunk('articleList/fetchArticleList',
         const response = await nuntiumApi.getArticles();
         thunkAPI.dispatch(setList({ data: response.data }));
     } catch (e) {
-        console.warn(e);
+        console.error(e);
     } finally {
         thunkAPI.dispatch(setLoading({ isLoading: false }));
     }

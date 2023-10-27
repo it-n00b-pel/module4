@@ -1,8 +1,8 @@
-import { useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
-import { ArticleCard } from 'src/entities/ArticleCard';
-
 import style from './ArticlesList.module.scss';
-import { getArticlesList } from '../model/selectors/getArticleList/getArticlesList.ts';
+
+import { useAppSelector } from '@/app/providers/StoreProvider/config/store.ts';
+import { ArticleCard } from '@/entities/ArticleCard';
+import { getArticlesList } from '@/widgets/ArticleList';
 
 type ArticlesListPropsType = {
     isFullList: boolean

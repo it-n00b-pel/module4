@@ -1,27 +1,76 @@
-# React + TypeScript + Vite
+## Краткий мануал по запуску и описанию [проекта](https://it-n00b-pel.github.io/module4/):
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Клонирование проекта:
 
-Currently, two official plugins are available:
+    - Установите Git на ваш компьютер, если он еще не установлен. Вы можете скачать его с
+      официального сайта Git - https://git-scm.com/downloads.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    - Откройте терминал (или командную строку) на вашем компьютере.
 
-## Expanding the ESLint configuration
+    - Перейдите в папку, в которую вы хотите клонировать проект.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+    - Введите следующую команду в терминале, чтобы склонировать проект с GitHub:
 
-- Configure the top-level `parserOptions` property like this:
+           git clone https://github.com/it-n00b-pel/module4.git
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+    - Нажмите Enter, чтобы начать клонирование проекта.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+    - Когда клонирование завершено, вы увидите новую папку с названием вашего репозитория.
+
+2. Установка зависимостей проекта:
+
+    - Откройте терминал и перейдите в папку проекта.
+
+    - Введите следующую команду, чтобы установить все зависимости, перечисленные в файле
+      package.json:
+
+           npm install
+
+    - Нажмите Enter, чтобы начать установку зависимостей. Это может занять некоторое время,
+      поскольку
+      нужно загрузить и установить все необходимые пакеты.
+
+3. Запуск проекта:
+
+    - После завершения установки зависимостей введите следующую команду, чтобы запустить проект:
+
+          npm run dev
+
+    - Нажмите Enter, чтобы запустить проект. Вы увидите сообщение в терминале, которое указывает
+      URL, по
+      которому можно открыть проект в веб-браузере.
+
+        - Откройте веб-браузер и введите URL, указанный в сообщении терминала. Проект будет открыт
+          и готов к использованию.
+
+4. Чтобы собрать проект для продакшена, запустите скрипт build командой
+
+       npm run build
+
+в терминале. Это создаст готовые к продакшену файлы в папке dist.
+
+5. Чтобы запустить собранный проект используйте команду в терминале.
+
+       npm run preview
+
+  
+- Откройте веб-браузер и введите URL, указанный в сообщении терминала. Проект будет открыт
+и готов к использованию.
+
+## Технологии и библиотеки, используемые в проекте:
+
+1. [x] vite - Быстрый инструмент сборки и разработки для современных веб-приложений.
+2. [x] @reduxjs/toolkit - Библиотека для управления состоянием приложения в Redux.
+3. [x] axios - HTTP-клиент для выполнения асинхронных запросов.
+4. [x] hamburger-react Компонент для создания гамбургер-меню в React.
+5.   [x] react - Основной пакет React для создания пользовательских интерфейсов.
+6. [x] react-dom - Пакет React для рендеринга на стороне клиента.
+7. [x]   react-helmet - Компонент для управления мета-тегами и другими заголовками в React.
+8. [x]   react-redux - Пакет для интеграции React и Redux. Позволяет использовать Redux в
+   компонентах
+   React.
+9. [x]   react-router-dom - Маршрутизатор для React для обработки переходов между различными URL.
+10. [x] typescript - язык программирования, который добавляет статическую типизацию к JavaScript.
+
+Это общее описание используемых технологий и библиотек в проекте. Конкретные детали и документацию
+по каждой из них можно найти на их официальных веб-сайтах и в документации проекта.

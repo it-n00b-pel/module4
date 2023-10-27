@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setLoading } from 'src/pages/model';
-import { nuntiumApi } from 'src/shared/api/api.ts';
-import { setBlogData } from 'src/widgets/Blog/model/slice/blogSlice.ts';
+
+import { setLoading } from '@/pages/model';
+import { nuntiumApi } from '@/shared/api/api.ts';
+import { setBlogData } from '@/widgets/Blog';
 
 export const fetchBlogData = createAsyncThunk('blog/fetchBlogData', async (id: number, thunkAPI) => {
     try {
@@ -9,7 +10,7 @@ export const fetchBlogData = createAsyncThunk('blog/fetchBlogData', async (id: n
         const response = await nuntiumApi.getBlogData(id);
         thunkAPI.dispatch(setBlogData({ data: response.data }));
     } catch (e) {
-        console.warn(e);
+        console.error(e);
     } finally {
         thunkAPI.dispatch(setLoading({ isLoading: false }));
     }

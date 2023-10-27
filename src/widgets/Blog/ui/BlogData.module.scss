@@ -25,9 +25,11 @@
     gap: 10px;
     text-align: center;
 
+
     .blog__title {
       font-family: "Libre Baskerville", sans-serif;
       font-size: 42px;
+      font-weight: 700;
       @media only screen and (max-width: 768px) {
         font-size: 24px;
       }
@@ -129,8 +131,6 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    position: relative;
-    padding-bottom: 30px;
 
     .blog__navigationText {
       font-size: 20px;
@@ -144,29 +144,82 @@
     }
 
 
-    .blog__leftArrow {
+    .blog__leftArrowBlock {
       position: absolute;
       left: 0;
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 30px;
-    }
 
-     .blog__rightArrow {
-       position: absolute;
-       right: 0;
-       display: flex;
-       align-items: center;
-       gap: 30px;
-    }
 
-    .blog__leftArrow img, .blog__rightArrow img {
-      width: 150px;
-      @media only screen and (max-width: 1024px) {
-        width: 100px;
+      .blog__leftArrowImg {
+        height: 150px;
+        width: 150px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: 1024px) {
+          width: 100px;
+          height: 100px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          width: 50px;
+          height: 50px;
+        }
+
+        & img {
+          transition: 200ms;
+          height: 50%;
+          width: 50%;
+        }
+
+        &:hover img {
+          transform: translateX(-10px);
+        }
       }
-      @media only screen and (max-width: 768px) {
-        width: 50px;
+    }
+
+    .blog__rightArrowBlock {
+      position: absolute;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      .blog__rightArrowImg {
+        height: 150px;
+        width: 150px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        @media only screen and (max-width: 1024px) {
+          width: 100px;
+          height: 100px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          width: 50px;
+          height: 50px;
+        }
+
+
+        & img {
+          transition: 200ms;
+          height: 50%;
+          width: 50%;
+        }
+
+        &:hover  img {
+          transform: translateX(10px);
+        }
       }
     }
   }

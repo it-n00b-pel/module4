@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 
 import { Helmet } from 'react-helmet';
-import { useAppDispatch } from 'src/app/providers/StoreProvider/config/store.ts';
-import { Banner } from 'src/entities/Banner';
-import { ArticlesList, fetchArticleList } from 'src/widgets/ArticleList';
 
 import style from './BlogsPage.module.scss';
+
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store.ts';
+import { Banner } from '@/entities/Banner';
+import { ArticlesList, fetchArticleList } from '@/widgets/ArticleList';
 
 const BlogsPage = () => {
     const dispatch = useAppDispatch();

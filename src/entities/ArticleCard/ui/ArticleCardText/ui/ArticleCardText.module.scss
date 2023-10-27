@@ -26,6 +26,37 @@
   .articleCard__title {
     font-family: "Libre Baskerville", sans-serif;
     font-size: 33px;
+    font-weight: 700;
+    transition: 300ms;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background-color: black;
+      transition: width 0.5s;
+    }
+
+    &:hover:after {
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 2px; /* Высота линии */
+      background-color: red; /* Цвет подчеркивания при появлении линии*/
+      transition: width 0.5s;  /* Время эффекта */
+    }
     @media only screen and (max-width: 768px) {
       font-size: 24px;
     }
@@ -34,9 +65,9 @@
     }
   }
 
-  .articleCard__title:hover {
-    text-decoration: underline;
-  }
+  //.articleCard__title:hover {
+  //  text-decoration: underline;
+  //}
 
   .articleCard__author {
     color: #1C1C1C80;

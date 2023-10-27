@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import { useAppDispatch, useAppSelector } from 'src/app/providers/StoreProvider/config/store.ts';
-import { getContent } from 'src/widgets/About';
-import { fetchAboutData } from 'src/widgets/About/model/services/fetchAboutData.ts';
-
 import style from './About.module.scss';
+
+import { useAppDispatch, useAppSelector } from '@/app/providers/StoreProvider/config/store.ts';
+import { getContent } from '@/widgets/About';
+import { fetchAboutData } from '@/widgets/About/model/services/fetchAboutData.ts';
 
 export const About = () => {
     const content = useAppSelector(getContent);

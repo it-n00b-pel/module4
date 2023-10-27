@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import { useAppDispatch } from 'src/app/providers/StoreProvider/config/store.ts';
-import { Banner } from 'src/entities/Banner';
-import { ArticlesList, fetchArticleList } from 'src/widgets/ArticleList';
-
 import srtle from './HomePage.module.scss';
+
+import { useAppDispatch } from '@/app/providers/StoreProvider/config/store.ts';
+import { Banner } from '@/entities/Banner';
+import { ArticlesList, fetchArticleList } from '@/widgets/ArticleList';
 
 const HomePage = () => {
     const dispatch = useAppDispatch();
