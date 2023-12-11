@@ -18,7 +18,7 @@
   font-size: 20px;
   font-family: "Libre Baskerville", sans-serif;
   @media only screen and (max-width: 425px) {
-    position: absolute;
+    position: fixed;
     right: -300px;
     display: flex;
     transition: 400ms;
